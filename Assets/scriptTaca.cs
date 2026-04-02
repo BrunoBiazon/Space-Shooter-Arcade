@@ -16,7 +16,11 @@ public class scriptTaca : MonoBehaviour{
 
     void Update(){
         
-        
+        if( transform.position.y < -Camera.main.orthographicSize )
+        {
+            Destroy(this.gameObject);
+
+        }
 
 
     }
