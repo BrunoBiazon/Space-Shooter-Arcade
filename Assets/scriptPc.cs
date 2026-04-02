@@ -14,12 +14,12 @@ public class scriptPc : MonoBehaviour {
         transform.position = new Vector2(0, -3.5f);
         rbd = this.GetComponent<Rigidbody2D>();
         velocidade = 10;
-        altura = Camera.main.orthographicSize;
+        altura = CameraUtils.GetAltura();
         
     }
 
     void Update(){
-        largura = altura * Camera.main.aspect;
+        largura = CameraUtils.GetAltura();
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
