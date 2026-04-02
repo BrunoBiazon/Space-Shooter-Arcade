@@ -15,11 +15,11 @@ public class scriptPc : MonoBehaviour {
         rbd = this.GetComponent<Rigidbody2D>();
         velocidade = 10;
         altura = Camera.main.orthographicSize;
-        largura = altura * Camera.main.aspect;
+        
     }
 
     void Update(){
-        
+        largura = altura * Camera.main.aspect;
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
