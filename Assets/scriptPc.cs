@@ -8,15 +8,18 @@ public class scriptPc : MonoBehaviour {
 
     public GameObject tiro;
 
-    private Rigidbody2D rbd;
+    AudioSource som_tiro;
+    
+    Rigidbody2D rbd;
     public float velocidade;
-    private float altura, largura;
+    float altura, largura;
 
     void Start() {
         transform.position = new Vector2(0, -3.5f);
         rbd = this.GetComponent<Rigidbody2D>();
         velocidade = 10;
         altura = CameraUtils.GetAltura();
+        som_tiro = this.GetComponent<AudioSource>();
 
     }
 
@@ -40,6 +43,7 @@ public class scriptPc : MonoBehaviour {
         // futuramente fazer logica para tiros especiais,ex: cada 0,5segundos pressionado = 1 tiro
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) // tiro padrão ao pressionar espaço ou btn esq mouse para baixo
         {
+            som_tiro.Play();
             Instantiate(tiro, transform.position, Quaternion.identity); 
         }
 
