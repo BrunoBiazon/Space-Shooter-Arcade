@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class scriptTaca : MonoBehaviour{
 
     private Rigidbody2D rbd;
     float velocidade = 5;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+        Destroy(this.gameObject);
+        
+    }
 
     void Start(){
         
