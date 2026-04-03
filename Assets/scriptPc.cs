@@ -11,8 +11,9 @@ public class scriptPc : MonoBehaviour {
     AudioSource som_tiro;
     
     Rigidbody2D rbd;
-    public float velocidade;
-    float altura, largura;
+   
+    float altura, largura, alturaNave,velocidade;
+    
 
     void Start() {
         transform.position = new Vector2(0, -3.5f);
@@ -20,6 +21,10 @@ public class scriptPc : MonoBehaviour {
         velocidade = 10;
         altura = CameraUtils.GetAltura();
         som_tiro = this.GetComponent<AudioSource>();
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Bounds limites = sr.bounds;
+        alturaNave = limites.size.y;
 
     }
 
@@ -37,8 +42,8 @@ public class scriptPc : MonoBehaviour {
 
         if (this.transform.position.y > -0.30)
             this.transform.position = new Vector2(this.transform.position.x, -0.30f);
-        else if (this.transform.position.y < -5)
-            this.transform.position = new Vector2(this.transform.position.x, -5);
+        else if (this.transform.position.y < -5 + (alturaNave/2) ) 
+            this.transform.position = new Vector2(this.transform.position.x, -5 + (alturaNave / 2) );
 
         // futuramente fazer logica para tiros especiais,ex: cada 0,5segundos pressionado = 1 tiro
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) // tiro padrão ao pressionar espaço ou btn esq mouse para baixo
