@@ -7,12 +7,14 @@ public class scriptTaca : MonoBehaviour{
 
     private Rigidbody2D rbd;
     float velocidade = 5;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
         Destroy(this.gameObject);
         
+        scriptPlacar.AddPlacar(1);
     }
 
     void Start(){
