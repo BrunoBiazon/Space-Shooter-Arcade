@@ -49,7 +49,8 @@ public class scriptPc : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) // tiro padrão ao pressionar espaço ou btn esq mouse para baixo
         {
             som_tiro.Play();
-            Instantiate(tiro, transform.position, Quaternion.identity); 
+            Vector2 posicaoTiro = new Vector2(transform.position.x, transform.position.y + (alturaNave - 1));
+            Instantiate(tiro, posicaoTiro, Quaternion.identity); 
         }
 
     }
