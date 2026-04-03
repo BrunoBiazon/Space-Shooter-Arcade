@@ -13,14 +13,14 @@ public class scriptFundo : MonoBehaviour
 
         altura = CameraUtils.GetAltura();
 
-        limiteInferior = -altura * 2;
+        limiteInferior = - altura * 2       ;
     }
 
     void Update()
     {
         if (transform.position.y < limiteInferior)
         {
-            transform.position = new Vector2(0, altura );
+            transform.position = new Vector2(0, altura * 2);
         }
     }
 }
