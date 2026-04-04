@@ -24,6 +24,7 @@ public class scriptVida : MonoBehaviour
 
         AtualizarTexto();
         
+
     }
 
     static void AtualizarTexto()
@@ -38,10 +39,13 @@ public class scriptVida : MonoBehaviour
     {
         if (vidaUpdate == 0)
         {
+            Debug.Log("Dentro do if verifica morte");
+
+            Destroy(GameObject.FindWithTag("navePC"));
 
             return 0;
         }
 
-       return 2;     
+       return vidaUpdate;     
     }
 }
