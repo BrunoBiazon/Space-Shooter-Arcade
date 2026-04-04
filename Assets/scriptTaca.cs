@@ -14,12 +14,8 @@ public class scriptTaca : MonoBehaviour{
         {
             Debug.Log("if");
 
-            int vida = scriptVida.AtualizarVida();
-
-            if (vida == 0)
-            {
-                Destroy(this.gameObject);
-            }
+            scriptVida.AtualizarVida();
+           
         }
         else
         {

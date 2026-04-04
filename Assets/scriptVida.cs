@@ -12,18 +12,18 @@ public class scriptVida : MonoBehaviour
         AtualizarTexto();
     }
 
-    public static int AtualizarVida()
+    public static void AtualizarVida()
     {
         if (txtVida == null)
         {
             txtVida = GameObject.Find("txtVida");
         }
 
-        vidaUpdate--; 
+        vidaUpdate--;
+        VerificaMorte(vidaUpdate);
 
         AtualizarTexto();
-
-        return vidaUpdate;
+        
     }
 
     static void AtualizarTexto()
@@ -32,5 +32,16 @@ public class scriptVida : MonoBehaviour
         {
             txtVida.GetComponent<TMP_Text>().text = "Vida: " + vidaUpdate;
         }
+    }
+
+    public static int VerificaMorte(int vidaUpdate)
+    {
+        if (vidaUpdate == 0)
+        {
+
+            return 0;
+        }
+
+       return 2;     
     }
 }
