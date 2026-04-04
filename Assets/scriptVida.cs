@@ -1,29 +1,36 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class scriptVida : MonoBehaviour
 {
-    static int vidaUpdate;
+    static int vidaUpdate = 3;
     static GameObject txtVida;
 
     void Start()
     {
-        vidaUpdate = 3;
-
         txtVida = GameObject.Find("txtVida");
+        AtualizarTexto();
     }
 
     public static int AtualizarVida()
     {
         if (txtVida == null)
         {
-            Debug.Log("if Atualizar vida");
             txtVida = GameObject.Find("txtVida");
         }
-        
-        vidaUpdate = vidaUpdate - 1 ; Debug.Log("Decremento");
-        txtVida.GetComponent<TMP_Text>().text = "Vida: " + vidaUpdate;
+
+        vidaUpdate--; 
+
+        AtualizarTexto();
 
         return vidaUpdate;
+    }
+
+    static void AtualizarTexto()
+    {
+        if (txtVida != null)
+        {
+            txtVida.GetComponent<TMP_Text>().text = "Vida: " + vidaUpdate;
+        }
     }
 }
