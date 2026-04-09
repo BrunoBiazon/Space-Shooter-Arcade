@@ -6,7 +6,7 @@ using UnityEngine;
 public class scriptTaca : MonoBehaviour{
 
     private Rigidbody2D rbd;
-    float velocidade = 5;
+    float velocidade;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +25,7 @@ public class scriptTaca : MonoBehaviour{
     void Start(){
 
         rbd = this.GetComponent<Rigidbody2D>();
+        velocidade = 5;
         rbd.velocity = new Vector2(0, -velocidade);
 
     }
@@ -36,7 +37,8 @@ public class scriptTaca : MonoBehaviour{
             Destroy(this.gameObject);
 
         }
-
+        velocidade = scriptPlacar.AttVelocidadeTaca(scriptPlacar.AttFase());
+        rbd.velocity = new Vector2(0, -velocidade);
 
     }
 }

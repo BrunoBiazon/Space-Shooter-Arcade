@@ -5,10 +5,11 @@ using TMPro;
 
 public class scriptPlacar : MonoBehaviour
 {
-    static int placar, velocidadeFase;
+    static int placar, velocidadeFasePC;
     static GameObject txtPlacar;
     static GameObject txtFase;
     static int fase, num_fase;
+    static float velocidadeFaseTaca;
     public void Start()
     {
         txtPlacar = GameObject.Find("txtPlacar");
@@ -47,20 +48,37 @@ public class scriptPlacar : MonoBehaviour
     {
         if (p == 1)
         {
-            velocidadeFase = 10; 
+            velocidadeFasePC = 10; 
         }
         else if (p == 2)
         {
-            velocidadeFase = 20;
+            velocidadeFasePC = 15;
         }
         else
         {
-            velocidadeFase = 30;
+            velocidadeFasePC = 20;
         }
 
-        return velocidadeFase;
+        return velocidadeFasePC;
 
     }
+    public static float AttVelocidadeTaca(int p)
+    {
+        if (p == 1)
+        {
+            velocidadeFaseTaca = 5;
+        }
+        else if (p == 2)
+        {
+            velocidadeFaseTaca = 6;
+        }
+        else
+        {
+            velocidadeFaseTaca = 7.5f;
+        }
 
+        return velocidadeFaseTaca;
+
+    }
 
 }
