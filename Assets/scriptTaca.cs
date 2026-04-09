@@ -19,7 +19,7 @@ public class scriptTaca : MonoBehaviour{
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
 
-            scriptPlacar.AddPlacar(2);
+            scriptPlacar.AddPlacar(30);
         }
     }
     void Start(){

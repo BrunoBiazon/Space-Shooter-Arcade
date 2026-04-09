@@ -5,7 +5,7 @@ using TMPro;
 
 public class scriptPlacar : MonoBehaviour
 {
-    static int placar;
+    static int placar, velocidadeFase;
     static GameObject txtPlacar;
     static GameObject txtFase;
     static int fase, num_fase;
@@ -20,11 +20,12 @@ public class scriptPlacar : MonoBehaviour
 
         placar += a;
         fase = AttFase();
+        
         txtPlacar.GetComponent<TMP_Text>().text = "Placar: " + placar;
         txtFase.GetComponent<TMP_Text>().text = "Fase: " + fase;
     }
     
-    static int AttFase()
+    public static int AttFase()
     {
         if (placar >= 0 && placar <= 30)
         {
@@ -41,4 +42,25 @@ public class scriptPlacar : MonoBehaviour
 
         return num_fase;
     }
+
+    public static int AttVelocidadePC(int p)
+    {
+        if (p == 1)
+        {
+            velocidadeFase = 10; 
+        }
+        else if (p == 2)
+        {
+            velocidadeFase = 20;
+        }
+        else
+        {
+            velocidadeFase = 30;
+        }
+
+        return velocidadeFase;
+
+    }
+
+
 }

@@ -33,6 +33,7 @@ public class scriptPc : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
+        velocidade = scriptPlacar.AttVelocidadePC(scriptPlacar.AttFase());
         rbd.velocity = new Vector2(x, y) * velocidade;
 
         if (this.transform.position.x > largura)
