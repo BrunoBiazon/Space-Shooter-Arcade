@@ -12,18 +12,14 @@ public class scriptTaca : MonoBehaviour{
     {
         if (collision.CompareTag("navePC"))
         {
-            Debug.Log("if");
-
             scriptVida.AtualizarVida();
-           
         }
         else
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            Debug.Log("else");
 
-            scriptPlacar.AddPlacar(1);
+            scriptPlacar.AddPlacar(2);
         }
     }
     void Start(){

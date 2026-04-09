@@ -14,7 +14,6 @@ public class scriptTiro : MonoBehaviour
         rdb.velocity = new Vector2(0, vel_tiro);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.y > CameraUtils.GetAltura())
